@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.toolTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.panelMain = new System.Windows.Forms.Panel();
@@ -41,21 +41,21 @@
             this.labelSearchText = new System.Windows.Forms.Label();
             this.labelExtensions = new System.Windows.Forms.Label();
             this.labelTarget = new System.Windows.Forms.Label();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.menuStrip1.SuspendLayout();
+            this.statusStripMain = new System.Windows.Forms.StatusStrip();
+            this.menuStripMain.SuspendLayout();
             this.tableLayoutPanelMain.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menuStripMain
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolTToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(899, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStripMain.Location = new System.Drawing.Point(0, 0);
+            this.menuStripMain.Name = "menuStripMain";
+            this.menuStripMain.Size = new System.Drawing.Size(899, 24);
+            this.menuStripMain.TabIndex = 0;
+            this.menuStripMain.Text = "menuStrip1";
             // 
             // toolTToolStripMenuItem
             // 
@@ -68,7 +68,7 @@
             this.tableLayoutPanelMain.ColumnCount = 1;
             this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelMain.Controls.Add(this.panelMain, 0, 0);
-            this.tableLayoutPanelMain.Controls.Add(this.statusStrip1, 0, 1);
+            this.tableLayoutPanelMain.Controls.Add(this.statusStripMain, 0, 1);
             this.tableLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelMain.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
@@ -182,13 +182,13 @@
             this.labelTarget.TabIndex = 0;
             this.labelTarget.Text = "Search File / Directory (&A)";
             // 
-            // statusStrip1
+            // statusStripMain
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 126);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(899, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStripMain";
+            this.statusStripMain.Location = new System.Drawing.Point(0, 126);
+            this.statusStripMain.Name = "statusStripMain";
+            this.statusStripMain.Size = new System.Drawing.Size(899, 22);
+            this.statusStripMain.TabIndex = 2;
+            this.statusStripMain.Text = "statusStripMain";
             // 
             // FormMain
             // 
@@ -196,12 +196,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 172);
             this.Controls.Add(this.tableLayoutPanelMain);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.menuStripMain);
+            this.MainMenuStrip = this.menuStripMain;
             this.Name = "FormMain";
             this.Text = "XGrepper";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.Load += new System.EventHandler(this.FormMain_Load);
+            this.menuStripMain.ResumeLayout(false);
+            this.menuStripMain.PerformLayout();
             this.tableLayoutPanelMain.ResumeLayout(false);
             this.tableLayoutPanelMain.PerformLayout();
             this.panelMain.ResumeLayout(false);
@@ -213,7 +214,7 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStripMain;
         private System.Windows.Forms.ToolStripMenuItem toolTToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMain;
         private System.Windows.Forms.Panel panelMain;
@@ -226,7 +227,7 @@
         private System.Windows.Forms.Label labelSearchText;
         private System.Windows.Forms.Label labelExtensions;
         private System.Windows.Forms.Label labelTarget;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip statusStripMain;
     }
 }
 

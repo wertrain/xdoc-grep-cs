@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using XDocGrep.Localize;
 
 namespace XDocGrep
 {
@@ -14,6 +16,9 @@ namespace XDocGrep
         [STAThread]
         static void Main()
         {
+            Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.CurrentCulture;
+            Localizer.SetStringLocalizer(new EmbeddedResourceStringLocalizer());
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormMain());

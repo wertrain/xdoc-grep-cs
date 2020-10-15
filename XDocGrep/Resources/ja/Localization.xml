@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StringLocalizationTable>
+  <StringItem id="Tool" context="" translation="ツール" />
+  <StringItem id="Search File / Directory (&amp;A)" context="" translation="対象ファイル / フォルダ (&amp;A)" />
+  <StringItem id="Target Extensions (&amp;E)" context="" translation="対象ファイルの条件　(&amp;E)" />
+  <StringItem id="Search Text (&amp;S)" context="" translation="検索文字列 (&amp;S)" />
+  <StringItem id="Search (&amp;F)" context="" translation="検索 (&amp;F)" />
+</StringLocalizationTable>

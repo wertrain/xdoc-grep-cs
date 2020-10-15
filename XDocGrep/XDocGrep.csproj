@@ -51,6 +51,11 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Localize\EmbeddedResourceStringLocalizer.cs" />
+    <Compile Include="Localize\Localizer.cs" />
+    <Compile Include="Localize\LocalizeUtil.cs" />
+    <Compile Include="Localize\StringLocalizer.cs" />
+    <Compile Include="Localize\XmlStringLocalizer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMain.resx">
@@ -77,6 +82,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ja\Localization.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
