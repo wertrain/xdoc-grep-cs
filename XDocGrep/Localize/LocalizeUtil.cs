@@ -24,6 +24,15 @@ namespace XDocGrep.Localize
                     var childLabel = child as Label;
                     childLabel.Text = childLabel.Text.Localize();
                 }
+
+                if (child is MenuStrip)
+                {
+                    var childMenuStrip = child as MenuStrip;
+                    foreach (ToolStripMenuItem menuItem in childMenuStrip.Items)
+                    {
+                        menuItem.Text = menuItem.Text.Localize();
+                    }                    
+                }
             }
         }
     }

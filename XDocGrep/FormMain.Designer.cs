@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
-            this.toolTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemTool = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.buttonSearch = new System.Windows.Forms.Button();
@@ -50,18 +50,18 @@
             // menuStripMain
             // 
             this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolTToolStripMenuItem});
+            this.toolStripMenuItemTool});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
-            this.menuStripMain.Size = new System.Drawing.Size(899, 24);
+            this.menuStripMain.Size = new System.Drawing.Size(563, 24);
             this.menuStripMain.TabIndex = 0;
             this.menuStripMain.Text = "menuStrip1";
             // 
-            // toolTToolStripMenuItem
+            // toolStripMenuItemTool
             // 
-            this.toolTToolStripMenuItem.Name = "toolTToolStripMenuItem";
-            this.toolTToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.toolTToolStripMenuItem.Text = "Tool(&T)";
+            this.toolStripMenuItemTool.Name = "toolStripMenuItemTool";
+            this.toolStripMenuItemTool.Size = new System.Drawing.Size(55, 20);
+            this.toolStripMenuItemTool.Text = "Tool(&T)";
             // 
             // tableLayoutPanelMain
             // 
@@ -75,7 +75,7 @@
             this.tableLayoutPanelMain.RowCount = 2;
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(899, 148);
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(563, 148);
             this.tableLayoutPanelMain.TabIndex = 1;
             // 
             // panelMain
@@ -93,12 +93,13 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(3, 3);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(893, 120);
+            this.panelMain.Size = new System.Drawing.Size(557, 120);
             this.panelMain.TabIndex = 1;
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(752, 88);
+            this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSearch.Location = new System.Drawing.Point(416, 88);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(131, 23);
             this.buttonSearch.TabIndex = 8;
@@ -108,7 +109,7 @@
             // buttonSearchTextOpenFile
             // 
             this.buttonSearchTextOpenFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSearchTextOpenFile.Location = new System.Drawing.Point(846, 59);
+            this.buttonSearchTextOpenFile.Location = new System.Drawing.Point(510, 59);
             this.buttonSearchTextOpenFile.Name = "buttonSearchTextOpenFile";
             this.buttonSearchTextOpenFile.Size = new System.Drawing.Size(37, 23);
             this.buttonSearchTextOpenFile.TabIndex = 7;
@@ -118,7 +119,7 @@
             // buttonTargetOpenFile
             // 
             this.buttonTargetOpenFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonTargetOpenFile.Location = new System.Drawing.Point(846, 9);
+            this.buttonTargetOpenFile.Location = new System.Drawing.Point(510, 9);
             this.buttonTargetOpenFile.Name = "buttonTargetOpenFile";
             this.buttonTargetOpenFile.Size = new System.Drawing.Size(37, 23);
             this.buttonTargetOpenFile.TabIndex = 6;
@@ -132,7 +133,7 @@
             this.comboBoxSearchText.FormattingEnabled = true;
             this.comboBoxSearchText.Location = new System.Drawing.Point(158, 61);
             this.comboBoxSearchText.Name = "comboBoxSearchText";
-            this.comboBoxSearchText.Size = new System.Drawing.Size(682, 20);
+            this.comboBoxSearchText.Size = new System.Drawing.Size(346, 20);
             this.comboBoxSearchText.TabIndex = 5;
             // 
             // comboBoxExtensions
@@ -142,8 +143,8 @@
             this.comboBoxExtensions.FormattingEnabled = true;
             this.comboBoxExtensions.Location = new System.Drawing.Point(158, 36);
             this.comboBoxExtensions.Name = "comboBoxExtensions";
-            this.comboBoxExtensions.Size = new System.Drawing.Size(682, 20);
-            this.comboBoxExtensions.TabIndex = 4;
+            this.comboBoxExtensions.Size = new System.Drawing.Size(346, 20);
+            this.comboBoxExtensions.TabIndex = 3;
             // 
             // comboBoxTarget
             // 
@@ -152,8 +153,8 @@
             this.comboBoxTarget.FormattingEnabled = true;
             this.comboBoxTarget.Location = new System.Drawing.Point(158, 11);
             this.comboBoxTarget.Name = "comboBoxTarget";
-            this.comboBoxTarget.Size = new System.Drawing.Size(682, 20);
-            this.comboBoxTarget.TabIndex = 3;
+            this.comboBoxTarget.Size = new System.Drawing.Size(346, 20);
+            this.comboBoxTarget.TabIndex = 1;
             // 
             // labelSearchText
             // 
@@ -161,7 +162,7 @@
             this.labelSearchText.Location = new System.Drawing.Point(8, 64);
             this.labelSearchText.Name = "labelSearchText";
             this.labelSearchText.Size = new System.Drawing.Size(86, 12);
-            this.labelSearchText.TabIndex = 2;
+            this.labelSearchText.TabIndex = 4;
             this.labelSearchText.Text = "Search Text (&S)";
             // 
             // labelExtensions
@@ -170,7 +171,7 @@
             this.labelExtensions.Location = new System.Drawing.Point(8, 39);
             this.labelExtensions.Name = "labelExtensions";
             this.labelExtensions.Size = new System.Drawing.Size(117, 12);
-            this.labelExtensions.TabIndex = 1;
+            this.labelExtensions.TabIndex = 2;
             this.labelExtensions.Text = "Target Extensions (&E)";
             // 
             // labelTarget
@@ -186,7 +187,7 @@
             // 
             this.statusStripMain.Location = new System.Drawing.Point(0, 126);
             this.statusStripMain.Name = "statusStripMain";
-            this.statusStripMain.Size = new System.Drawing.Size(899, 22);
+            this.statusStripMain.Size = new System.Drawing.Size(563, 22);
             this.statusStripMain.TabIndex = 2;
             this.statusStripMain.Text = "statusStripMain";
             // 
@@ -194,7 +195,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(899, 172);
+            this.ClientSize = new System.Drawing.Size(563, 172);
             this.Controls.Add(this.tableLayoutPanelMain);
             this.Controls.Add(this.menuStripMain);
             this.MainMenuStrip = this.menuStripMain;
@@ -215,7 +216,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStripMain;
-        private System.Windows.Forms.ToolStripMenuItem toolTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemTool;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMain;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Button buttonSearch;
