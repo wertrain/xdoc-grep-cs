@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemTool = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,10 +45,15 @@
             this.labelTarget = new System.Windows.Forms.Label();
             this.toolStripStatusLabelSearchState = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStripMain = new System.Windows.Forms.StatusStrip();
+            this.toolStripProgressBarSearchProgress = new System.Windows.Forms.ToolStripProgressBar();
+            this.contextMenuStripTargetSelect = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemSelectFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemSelectDirectory = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.tableLayoutPanelMain.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.statusStripMain.SuspendLayout();
+            this.contextMenuStripTargetSelect.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStripMain
@@ -70,8 +76,8 @@
             // 
             this.tableLayoutPanelMain.ColumnCount = 1;
             this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMain.Controls.Add(this.panelMain, 0, 0);
-            this.tableLayoutPanelMain.Controls.Add(this.statusStripMain, 0, 1);
+            this.tableLayoutPanelMain.Controls.Add(this.panelMain);
+            this.tableLayoutPanelMain.Controls.Add(this.statusStripMain);
             this.tableLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelMain.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
@@ -129,6 +135,7 @@
             this.buttonTargetOpenFile.TabIndex = 6;
             this.buttonTargetOpenFile.Text = "...";
             this.buttonTargetOpenFile.UseVisualStyleBackColor = true;
+            this.buttonTargetOpenFile.Click += new System.EventHandler(this.buttonTargetOpenFile_Click);
             // 
             // comboBoxSearchText
             // 
@@ -195,12 +202,40 @@
             // statusStripMain
             // 
             this.statusStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripProgressBarSearchProgress,
             this.toolStripStatusLabelSearchState});
             this.statusStripMain.Location = new System.Drawing.Point(0, 125);
             this.statusStripMain.Name = "statusStripMain";
             this.statusStripMain.Size = new System.Drawing.Size(564, 22);
             this.statusStripMain.TabIndex = 2;
             this.statusStripMain.Text = "statusStripMain";
+            // 
+            // toolStripProgressBarSearchProgress
+            // 
+            this.toolStripProgressBarSearchProgress.Name = "toolStripProgressBarSearchProgress";
+            this.toolStripProgressBarSearchProgress.Size = new System.Drawing.Size(100, 16);
+            // 
+            // contextMenuStripTargetSelect
+            // 
+            this.contextMenuStripTargetSelect.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemSelectFile,
+            this.toolStripMenuItemSelectDirectory});
+            this.contextMenuStripTargetSelect.Name = "contextMenuStripTargetSelect";
+            this.contextMenuStripTargetSelect.Size = new System.Drawing.Size(181, 70);
+            // 
+            // toolStripMenuItemSelectFile
+            // 
+            this.toolStripMenuItemSelectFile.Name = "toolStripMenuItemSelectFile";
+            this.toolStripMenuItemSelectFile.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemSelectFile.Text = "File (&F)";
+            this.toolStripMenuItemSelectFile.Click += new System.EventHandler(this.toolStripMenuItemSelectFile_Click);
+            // 
+            // toolStripMenuItemSelectDirectory
+            // 
+            this.toolStripMenuItemSelectDirectory.Name = "toolStripMenuItemSelectDirectory";
+            this.toolStripMenuItemSelectDirectory.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemSelectDirectory.Text = "Directory (&D)";
+            this.toolStripMenuItemSelectDirectory.Click += new System.EventHandler(this.toolStripMenuItemSelectDirectory_Click);
             // 
             // FormMain
             // 
@@ -213,7 +248,7 @@
             this.MainMenuStrip = this.menuStripMain;
             this.MinimumSize = new System.Drawing.Size(0, 210);
             this.Name = "FormMain";
-            this.Text = "XGrepper";
+            this.Text = "X-Grepper";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.menuStripMain.ResumeLayout(false);
@@ -224,6 +259,7 @@
             this.panelMain.PerformLayout();
             this.statusStripMain.ResumeLayout(false);
             this.statusStripMain.PerformLayout();
+            this.contextMenuStripTargetSelect.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,6 +282,10 @@
         private System.Windows.Forms.Label labelTarget;
         private System.Windows.Forms.StatusStrip statusStripMain;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelSearchState;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBarSearchProgress;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripTargetSelect;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSelectFile;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSelectDirectory;
     }
 }
 

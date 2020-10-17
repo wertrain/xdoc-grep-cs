@@ -31,8 +31,20 @@ namespace XDocGrep.Localize
                     foreach (ToolStripMenuItem menuItem in childMenuStrip.Items)
                     {
                         menuItem.Text = menuItem.Text.Localize();
-                    }                    
+                    }
                 }
+            }
+        }
+
+        /// <summary>
+        /// コントロールとその子をローカライズする
+        /// </summary>
+        /// <param name="control"></param>
+        public static void Localized(ContextMenuStrip contextMenuStrip)
+        {
+            foreach (ToolStripMenuItem menuItem in contextMenuStrip.Items)
+            {
+                menuItem.Text = menuItem.Text.Localize();
             }
         }
     }
