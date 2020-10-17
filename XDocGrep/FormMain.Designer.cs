@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemTool = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
@@ -41,10 +42,12 @@
             this.labelSearchText = new System.Windows.Forms.Label();
             this.labelExtensions = new System.Windows.Forms.Label();
             this.labelTarget = new System.Windows.Forms.Label();
+            this.toolStripStatusLabelSearchState = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStripMain = new System.Windows.Forms.StatusStrip();
             this.menuStripMain.SuspendLayout();
             this.tableLayoutPanelMain.SuspendLayout();
             this.panelMain.SuspendLayout();
+            this.statusStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStripMain
@@ -53,7 +56,7 @@
             this.toolStripMenuItemTool});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
-            this.menuStripMain.Size = new System.Drawing.Size(563, 24);
+            this.menuStripMain.Size = new System.Drawing.Size(564, 24);
             this.menuStripMain.TabIndex = 0;
             this.menuStripMain.Text = "menuStrip1";
             // 
@@ -75,7 +78,7 @@
             this.tableLayoutPanelMain.RowCount = 2;
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(563, 148);
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(564, 147);
             this.tableLayoutPanelMain.TabIndex = 1;
             // 
             // panelMain
@@ -93,23 +96,24 @@
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(3, 3);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(557, 120);
+            this.panelMain.Size = new System.Drawing.Size(558, 119);
             this.panelMain.TabIndex = 1;
             // 
             // buttonSearch
             // 
             this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSearch.Location = new System.Drawing.Point(416, 88);
+            this.buttonSearch.Location = new System.Drawing.Point(417, 88);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(131, 23);
             this.buttonSearch.TabIndex = 8;
             this.buttonSearch.Text = "Search (&F)";
             this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // buttonSearchTextOpenFile
             // 
             this.buttonSearchTextOpenFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSearchTextOpenFile.Location = new System.Drawing.Point(510, 59);
+            this.buttonSearchTextOpenFile.Location = new System.Drawing.Point(511, 59);
             this.buttonSearchTextOpenFile.Name = "buttonSearchTextOpenFile";
             this.buttonSearchTextOpenFile.Size = new System.Drawing.Size(37, 23);
             this.buttonSearchTextOpenFile.TabIndex = 7;
@@ -119,7 +123,7 @@
             // buttonTargetOpenFile
             // 
             this.buttonTargetOpenFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonTargetOpenFile.Location = new System.Drawing.Point(510, 9);
+            this.buttonTargetOpenFile.Location = new System.Drawing.Point(511, 9);
             this.buttonTargetOpenFile.Name = "buttonTargetOpenFile";
             this.buttonTargetOpenFile.Size = new System.Drawing.Size(37, 23);
             this.buttonTargetOpenFile.TabIndex = 6;
@@ -133,7 +137,7 @@
             this.comboBoxSearchText.FormattingEnabled = true;
             this.comboBoxSearchText.Location = new System.Drawing.Point(158, 61);
             this.comboBoxSearchText.Name = "comboBoxSearchText";
-            this.comboBoxSearchText.Size = new System.Drawing.Size(346, 20);
+            this.comboBoxSearchText.Size = new System.Drawing.Size(347, 20);
             this.comboBoxSearchText.TabIndex = 5;
             // 
             // comboBoxExtensions
@@ -143,7 +147,7 @@
             this.comboBoxExtensions.FormattingEnabled = true;
             this.comboBoxExtensions.Location = new System.Drawing.Point(158, 36);
             this.comboBoxExtensions.Name = "comboBoxExtensions";
-            this.comboBoxExtensions.Size = new System.Drawing.Size(346, 20);
+            this.comboBoxExtensions.Size = new System.Drawing.Size(347, 20);
             this.comboBoxExtensions.TabIndex = 3;
             // 
             // comboBoxTarget
@@ -153,7 +157,7 @@
             this.comboBoxTarget.FormattingEnabled = true;
             this.comboBoxTarget.Location = new System.Drawing.Point(158, 11);
             this.comboBoxTarget.Name = "comboBoxTarget";
-            this.comboBoxTarget.Size = new System.Drawing.Size(346, 20);
+            this.comboBoxTarget.Size = new System.Drawing.Size(347, 20);
             this.comboBoxTarget.TabIndex = 1;
             // 
             // labelSearchText
@@ -183,11 +187,18 @@
             this.labelTarget.TabIndex = 0;
             this.labelTarget.Text = "Search File / Directory (&A)";
             // 
+            // toolStripStatusLabelSearchState
+            // 
+            this.toolStripStatusLabelSearchState.Name = "toolStripStatusLabelSearchState";
+            this.toolStripStatusLabelSearchState.Size = new System.Drawing.Size(0, 17);
+            // 
             // statusStripMain
             // 
-            this.statusStripMain.Location = new System.Drawing.Point(0, 126);
+            this.statusStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabelSearchState});
+            this.statusStripMain.Location = new System.Drawing.Point(0, 125);
             this.statusStripMain.Name = "statusStripMain";
-            this.statusStripMain.Size = new System.Drawing.Size(563, 22);
+            this.statusStripMain.Size = new System.Drawing.Size(564, 22);
             this.statusStripMain.TabIndex = 2;
             this.statusStripMain.Text = "statusStripMain";
             // 
@@ -195,12 +206,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 172);
+            this.ClientSize = new System.Drawing.Size(564, 171);
             this.Controls.Add(this.tableLayoutPanelMain);
             this.Controls.Add(this.menuStripMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStripMain;
+            this.MinimumSize = new System.Drawing.Size(0, 210);
             this.Name = "FormMain";
             this.Text = "XGrepper";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
@@ -208,6 +222,8 @@
             this.tableLayoutPanelMain.PerformLayout();
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
+            this.statusStripMain.ResumeLayout(false);
+            this.statusStripMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,6 +245,7 @@
         private System.Windows.Forms.Label labelExtensions;
         private System.Windows.Forms.Label labelTarget;
         private System.Windows.Forms.StatusStrip statusStripMain;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelSearchState;
     }
 }
 

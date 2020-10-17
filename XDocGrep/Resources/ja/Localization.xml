@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <StringLocalizationTable>
+  <StringItem id="XGrepper" context="" translation="X-Grepper" />
   <StringItem id="Tool(&amp;T)" context="" translation="ツール(&amp;T)" />
   <StringItem id="Search File / Directory (&amp;A)" context="" translation="対象ファイル / フォルダ (&amp;A)" />
   <StringItem id="Target Extensions (&amp;E)" context="" translation="対象ファイルの条件　(&amp;E)" />
