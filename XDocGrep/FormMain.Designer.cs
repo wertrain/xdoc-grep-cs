@@ -43,12 +43,14 @@
             this.labelSearchText = new System.Windows.Forms.Label();
             this.labelExtensions = new System.Windows.Forms.Label();
             this.labelTarget = new System.Windows.Forms.Label();
-            this.toolStripStatusLabelSearchState = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStripMain = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBarSearchProgress = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripStatusLabelSearchState = new System.Windows.Forms.ToolStripStatusLabel();
             this.contextMenuStripTargetSelect = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemSelectFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSelectDirectory = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundWorkerSearch = new System.ComponentModel.BackgroundWorker();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.menuStripMain.SuspendLayout();
             this.tableLayoutPanelMain.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -90,6 +92,7 @@
             // panelMain
             // 
             this.panelMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelMain.Controls.Add(this.buttonCancel);
             this.panelMain.Controls.Add(this.buttonSearch);
             this.panelMain.Controls.Add(this.buttonSearchTextOpenFile);
             this.panelMain.Controls.Add(this.buttonTargetOpenFile);
@@ -194,11 +197,6 @@
             this.labelTarget.TabIndex = 0;
             this.labelTarget.Text = "Search File / Directory (&A)";
             // 
-            // toolStripStatusLabelSearchState
-            // 
-            this.toolStripStatusLabelSearchState.Name = "toolStripStatusLabelSearchState";
-            this.toolStripStatusLabelSearchState.Size = new System.Drawing.Size(0, 17);
-            // 
             // statusStripMain
             // 
             this.statusStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -215,27 +213,51 @@
             this.toolStripProgressBarSearchProgress.Name = "toolStripProgressBarSearchProgress";
             this.toolStripProgressBarSearchProgress.Size = new System.Drawing.Size(100, 16);
             // 
+            // toolStripStatusLabelSearchState
+            // 
+            this.toolStripStatusLabelSearchState.Name = "toolStripStatusLabelSearchState";
+            this.toolStripStatusLabelSearchState.Size = new System.Drawing.Size(0, 17);
+            // 
             // contextMenuStripTargetSelect
             // 
             this.contextMenuStripTargetSelect.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemSelectFile,
             this.toolStripMenuItemSelectDirectory});
             this.contextMenuStripTargetSelect.Name = "contextMenuStripTargetSelect";
-            this.contextMenuStripTargetSelect.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStripTargetSelect.Size = new System.Drawing.Size(142, 48);
             // 
             // toolStripMenuItemSelectFile
             // 
             this.toolStripMenuItemSelectFile.Name = "toolStripMenuItemSelectFile";
-            this.toolStripMenuItemSelectFile.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemSelectFile.Size = new System.Drawing.Size(141, 22);
             this.toolStripMenuItemSelectFile.Text = "File (&F)";
             this.toolStripMenuItemSelectFile.Click += new System.EventHandler(this.toolStripMenuItemSelectFile_Click);
             // 
             // toolStripMenuItemSelectDirectory
             // 
             this.toolStripMenuItemSelectDirectory.Name = "toolStripMenuItemSelectDirectory";
-            this.toolStripMenuItemSelectDirectory.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemSelectDirectory.Size = new System.Drawing.Size(141, 22);
             this.toolStripMenuItemSelectDirectory.Text = "Directory (&D)";
             this.toolStripMenuItemSelectDirectory.Click += new System.EventHandler(this.toolStripMenuItemSelectDirectory_Click);
+            // 
+            // backgroundWorkerSearch
+            // 
+            this.backgroundWorkerSearch.WorkerReportsProgress = true;
+            this.backgroundWorkerSearch.WorkerSupportsCancellation = true;
+            this.backgroundWorkerSearch.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerSearch_DoWork);
+            this.backgroundWorkerSearch.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorkerSearch_ProgressChanged);
+            this.backgroundWorkerSearch.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerSearch_RunWorkerCompleted);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCancel.Location = new System.Drawing.Point(417, 88);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(131, 23);
+            this.buttonCancel.TabIndex = 9;
+            this.buttonCancel.Text = "Cancel (&F)";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // FormMain
             // 
@@ -246,7 +268,7 @@
             this.Controls.Add(this.menuStripMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStripMain;
-            this.MinimumSize = new System.Drawing.Size(0, 210);
+            this.MinimumSize = new System.Drawing.Size(16, 210);
             this.Name = "FormMain";
             this.Text = "X-Grepper";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
@@ -286,6 +308,8 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStripTargetSelect;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSelectFile;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSelectDirectory;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerSearch;
+        private System.Windows.Forms.Button buttonCancel;
     }
 }
 
