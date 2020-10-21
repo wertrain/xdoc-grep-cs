@@ -105,7 +105,9 @@ namespace XDocGrep
         {
             if (!backgroundWorkerSearch.IsBusy)
             {
-                backgroundWorkerSearch.RunWorkerAsync(comboBoxTarget.Text);
+                var args = new List<string>();
+                args.Add(comboBoxTarget.Text);
+                backgroundWorkerSearch.RunWorkerAsync(args);
                 buttonSearch.Visible = false;
                 buttonCancel.Visible = true;
             }
@@ -192,8 +194,11 @@ namespace XDocGrep
         {
             int fileCount = 0;
 
+            var args = e.Argument as List<string>;
+            var targetPath = args[0];
+
             var param = new WorkerProgressParam();
-            foreach (var file in Directory.EnumerateFiles(e.Argument.ToString(), "*", SearchOption.AllDirectories))
+            foreach (var file in Directory.EnumerateFiles(targetPath, "*", SearchOption.AllDirectories))
             {
                 ++fileCount;
                 if (backgroundWorkerSearch.CancellationPending)
