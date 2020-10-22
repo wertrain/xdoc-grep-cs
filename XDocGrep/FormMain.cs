@@ -108,6 +108,14 @@ namespace XDocGrep
                 var args = new List<string>();
                 args.Add(comboBoxTarget.Text);
                 backgroundWorkerSearch.RunWorkerAsync(args);
+
+                _settings.TargetHistory.Remove(comboBoxTarget.Text);
+                _settings.TargetHistory.Add(comboBoxTarget.Text);
+                _settings.ExtensionsHistory.Remove(comboBoxExtensions.Text);
+                _settings.ExtensionsHistory.Add(comboBoxExtensions.Text);
+                _settings.SearchTextHistory.Remove(comboBoxSearchText.Text);
+                _settings.SearchTextHistory.Add(comboBoxSearchText.Text);
+
                 buttonSearch.Visible = false;
                 buttonCancel.Visible = true;
             }
