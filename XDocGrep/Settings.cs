@@ -39,6 +39,27 @@ namespace XDocGrep
             SearchTextHistory = new List<string>();
         }
 
+        public static Settings Default()
+        {
+            var settings = new Settings();
+            var defaultExtensions = new List<string>()
+            {
+                "*.pdf",                   // Adobe PDF
+                "*.xls .xlsx",             // Microsoft Excel 
+                "*.doc .docx",             // Microsoft Word 
+                "*.ppt .pptx",             // Microsoft PowerPoint
+                "*.eml",                   // OutlookExpressのエクスポート形式 
+                "*.sxw *.sxc *.sxi *.sxd", // OpenOffice.org
+                "*.odt *.ods *.odp *.odg", // Open Document
+                "*.jtd *.jtt",             // 一太郎 ver8/9/10/11/12
+                "*.jfw *.jvw",             // 一太郎 ver7
+                "*.jbw *.juw",             // 一太郎 ver6
+                "*.jaw *.jtw",             // 一太郎 ver5
+            };
+            settings.ExtensionsHistory.AddRange(defaultExtensions);
+            return settings;
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -61,7 +82,7 @@ namespace XDocGrep
             {
 
             }
-            return new Settings();
+            return Default();
         }
 
         /// <summary>

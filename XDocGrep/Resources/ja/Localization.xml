@@ -10,5 +10,6 @@
   <StringItem id="File (&amp;F)" context="" translation="ファイル (&amp;F)" />
   <StringItem id="Directory (&amp;D)" context="" translation="フォルダ (&amp;D)" />
   <StringItem id="Searching for a files" context="" translation="ファイルの検索中" />
-  <StringItem id="Checking file" context="" translation="ファイルのチェック中" />  
+  <StringItem id="Checking file" context="" translation="ファイルのチェック中" />
+  <StringItem id="Search Result" context="" translation="検索結果" />
 </StringLocalizationTable>

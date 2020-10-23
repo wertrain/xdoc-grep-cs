@@ -61,6 +61,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSearchResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSearchResult.Designer.cs">
+      <DependentUpon>FormSearchResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="Localize\EmbeddedResourceStringLocalizer.cs" />
     <Compile Include="Localize\Localizer.cs" />
     <Compile Include="Localize\LocalizeUtil.cs" />
@@ -72,6 +78,9 @@
     <Compile Include="XDoc2TxtManager.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSearchResult.resx">
+      <DependentUpon>FormSearchResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
