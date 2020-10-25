@@ -34,6 +34,7 @@
             this.toolStripMenuItemTool = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonSearchTextOpenFile = new System.Windows.Forms.Button();
             this.buttonTargetOpenFile = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
             this.toolStripMenuItemSelectFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSelectDirectory = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorkerSearch = new System.ComponentModel.BackgroundWorker();
-            this.buttonCancel = new System.Windows.Forms.Button();
             this.menuStripMain.SuspendLayout();
             this.tableLayoutPanelMain.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -108,6 +108,17 @@
             this.panelMain.Size = new System.Drawing.Size(558, 119);
             this.panelMain.TabIndex = 1;
             // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCancel.Location = new System.Drawing.Point(417, 88);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(131, 23);
+            this.buttonCancel.TabIndex = 9;
+            this.buttonCancel.Text = "Cancel (&F)";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
             // buttonSearch
             // 
             this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -128,6 +139,7 @@
             this.buttonSearchTextOpenFile.TabIndex = 7;
             this.buttonSearchTextOpenFile.Text = "...";
             this.buttonSearchTextOpenFile.UseVisualStyleBackColor = true;
+            this.buttonSearchTextOpenFile.Visible = false;
             // 
             // buttonTargetOpenFile
             // 
@@ -149,6 +161,8 @@
             this.comboBoxSearchText.Name = "comboBoxSearchText";
             this.comboBoxSearchText.Size = new System.Drawing.Size(347, 20);
             this.comboBoxSearchText.TabIndex = 5;
+            this.comboBoxSearchText.TextUpdate += new System.EventHandler(this.comboBoxCommon_TextUpdate);
+            this.comboBoxSearchText.TextChanged += new System.EventHandler(this.comboBoxCommon_TextUpdate);
             // 
             // comboBoxExtensions
             // 
@@ -169,6 +183,8 @@
             this.comboBoxTarget.Name = "comboBoxTarget";
             this.comboBoxTarget.Size = new System.Drawing.Size(347, 20);
             this.comboBoxTarget.TabIndex = 1;
+            this.comboBoxTarget.TextUpdate += new System.EventHandler(this.comboBoxCommon_TextUpdate);
+            this.comboBoxTarget.TextChanged += new System.EventHandler(this.comboBoxCommon_TextUpdate);
             // 
             // labelSearchText
             // 
@@ -247,17 +263,6 @@
             this.backgroundWorkerSearch.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerSearch_DoWork);
             this.backgroundWorkerSearch.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorkerSearch_ProgressChanged);
             this.backgroundWorkerSearch.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerSearch_RunWorkerCompleted);
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancel.Location = new System.Drawing.Point(417, 88);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(131, 23);
-            this.buttonCancel.TabIndex = 9;
-            this.buttonCancel.Text = "Cancel (&F)";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // FormMain
             // 

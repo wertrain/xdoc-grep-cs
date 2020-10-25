@@ -12,4 +12,6 @@
   <StringItem id="Searching for a files" context="" translation="ファイルの検索中" />
   <StringItem id="Checking file" context="" translation="ファイルのチェック中" />
   <StringItem id="Search Result" context="" translation="検索結果" />
+  <StringItem id="File not found" context="" translation="ファイルが見つかりませんでした" />
+  <StringItem id="Text not found" context="" translation="指定されたテキストが見つかりませんでした" />
 </StringLocalizationTable>
