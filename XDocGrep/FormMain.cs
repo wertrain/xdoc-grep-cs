@@ -100,7 +100,12 @@ namespace XDocGrep
         /// <summary>
         /// 設定情報
         /// </summary>
-            private Settings _settings;
+        private Settings _settings;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private Caches _caches;
 
         public FormMain()
         {
@@ -111,6 +116,8 @@ namespace XDocGrep
         {
             _settings = Settings.Load();
             Size = _settings.FormSize;
+
+            _caches = Caches.Load();
 
             comboBoxTarget.Items.AddRange(_settings.TargetHistory.ToArray<string>());
             comboBoxExtensions.Items.AddRange(_settings.ExtensionsHistory.ToArray<string>());

@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Caches.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>

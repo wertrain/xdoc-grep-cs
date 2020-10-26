@@ -73,7 +73,7 @@ namespace XDocGrep
                 var assembly = Assembly.GetEntryAssembly();
                 var filePath = Path.GetDirectoryName(assembly.Location) + Path.DirectorySeparatorChar + "settings.xml";
 
-                using (var sr = new System.IO.StreamReader(filePath, new UTF8Encoding(false)))
+                using (var sr = new StreamReader(filePath, new UTF8Encoding(false)))
                 {
                     return (Settings)serializer.Deserialize(sr);
                 }
@@ -99,7 +99,7 @@ namespace XDocGrep
                 var assembly = Assembly.GetEntryAssembly();
                 var filePath = Path.GetDirectoryName(assembly.Location) + Path.DirectorySeparatorChar + "settings.xml";
 
-                using (System.IO.StreamWriter sw = new System.IO.StreamWriter(filePath, false, new System.Text.UTF8Encoding(false)))
+                using (var sw = new StreamWriter(filePath, false, new UTF8Encoding(false)))
                 {
                     serializer.Serialize(sw, settings);
                 }
