@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSearchResult));
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.listViewSearchResult = new System.Windows.Forms.ListView();
             this.columnHeaderText = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderFileName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStripMain = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemOpenInExplorer = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemCopyFilePath = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanelMain.SuspendLayout();
+            this.contextMenuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanelMain
@@ -74,6 +79,26 @@
             this.columnHeaderFileName.Text = "ファイル名";
             this.columnHeaderFileName.Width = 224;
             // 
+            // contextMenuStripMain
+            // 
+            this.contextMenuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemOpenInExplorer,
+            this.toolStripMenuItemCopyFilePath});
+            this.contextMenuStripMain.Name = "contextMenuStripMain";
+            this.contextMenuStripMain.Size = new System.Drawing.Size(181, 70);
+            // 
+            // toolStripMenuItemOpenInExplorer
+            // 
+            this.toolStripMenuItemOpenInExplorer.Name = "toolStripMenuItemOpenInExplorer";
+            this.toolStripMenuItemOpenInExplorer.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemOpenInExplorer.Text = "Open In Explorer (&E)";
+            // 
+            // toolStripMenuItemCopyFilePath
+            // 
+            this.toolStripMenuItemCopyFilePath.Name = "toolStripMenuItemCopyFilePath";
+            this.toolStripMenuItemCopyFilePath.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemCopyFilePath.Text = "Copy File Path (&C)";
+            // 
             // FormSearchResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -84,6 +109,7 @@
             this.Name = "FormSearchResult";
             this.Text = "Search Result";
             this.tableLayoutPanelMain.ResumeLayout(false);
+            this.contextMenuStripMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -94,5 +120,8 @@
         private System.Windows.Forms.ListView listViewSearchResult;
         private System.Windows.Forms.ColumnHeader columnHeaderText;
         private System.Windows.Forms.ColumnHeader columnHeaderFileName;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripMain;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemOpenInExplorer;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCopyFilePath;
     }
 }

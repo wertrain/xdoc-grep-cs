@@ -14,4 +14,7 @@
   <StringItem id="Search Result" context="" translation="検索結果" />
   <StringItem id="File not found" context="" translation="ファイルが見つかりませんでした" />
   <StringItem id="Text not found" context="" translation="指定されたテキストが見つかりませんでした" />
+  <StringItem id="Open In Explorer (&amp;E)" context="" translation="エクスプローラーで開く" />
+  <StringItem id="Copy File Path (&amp;C)" context="" translation="ファイルパスをコピー" />
+  
 </StringLocalizationTable>

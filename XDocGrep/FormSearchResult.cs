@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace XDocGrep
             /// <summary>
             /// 
             /// </summary>
-            public string FileName { get; set; }
+            public string FilePath { get; set; }
         }
 
         public FormSearchResult()
@@ -42,7 +43,8 @@ namespace XDocGrep
             {
                 var item = new ListViewItem();
                 item.Text = result.Text;
-                item.SubItems.Add(result.FileName);
+                item.Tag = result.FilePath;
+                item.SubItems.Add(Path.GetFileName(result.FilePath));
                 listViewSearchResult.Items.Add(item);
             }
         }

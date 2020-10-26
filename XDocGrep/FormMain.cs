@@ -75,7 +75,7 @@ namespace XDocGrep
                 /// <summary>
                 /// 
                 /// </summary>
-                public string FileName { get; set; }
+                public string FilePath { get; set; }
             }
 
             /// <summary>
@@ -297,7 +297,7 @@ namespace XDocGrep
                     var result = new WorkerResultParam.Result();
                     int startIndex = Math.Max(0, index - aroundTextLength);
                     result.SearchedAroundText = extractedText.Substring(startIndex, aroundTextLength * 2 + searchText.Length);
-                    result.FileName = Path.GetFileName(file);
+                    result.FilePath = file;
                     resultParam.Results.Add(result);
 
                     index = index + 1;
@@ -378,7 +378,7 @@ namespace XDocGrep
                     {
                         var searchResult = new FormSearchResult.SearchResult();
                         searchResult.Text = result.SearchedAroundText;
-                        searchResult.FileName = result.FileName;
+                        searchResult.FilePath = result.FilePath;
                         searchResults.Add(searchResult);
                     }
                     form.SetResults(searchResults);
