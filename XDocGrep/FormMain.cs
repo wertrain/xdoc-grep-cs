@@ -263,25 +263,49 @@ namespace XDocGrep
             var searchText = args[2];
 
             var files = new List<string>();
-            foreach (var extension in extensions.Split())
+            if (Directory.Exists(targetPath))
             {
-                var param = new WorkerProgressParam();
-                foreach (var file in Directory.EnumerateFiles(targetPath, extension, SearchOption.AllDirectories))
+                bool findCache = false;
+                foreach (var directory in _caches.DirectoryCaches)
                 {
-                    files.Add(file);
-                    if (backgroundWorkerSearch.CancellationPending)
+                    if (directory.Path == targetPath)
                     {
-                        param.Mode = WorkerProgressParam.WorkerMode.ModeCanceled;
-                        backgroundWorkerSearch.ReportProgress(0, param);
-                        break;
+                        if (directory.UpdateTime == Directory.GetLastWriteTime(targetPath))
+                        {
+                            files.AddRange(directory.Files);
+                            findCache = true;
+                            break;
+                        }
                     }
-
-                    param.Mode = WorkerProgressParam.WorkerMode.ModeSearchingFiles;
-                    param.FileCount = files.Count;
-                    backgroundWorkerSearch.ReportProgress(0, param);
                 }
-            }
 
+                if (!findCache)
+                {
+                    foreach (var extension in extensions.Split())
+                    {
+                        var param = new WorkerProgressParam();
+                        foreach (var file in Directory.EnumerateFiles(targetPath, extension, SearchOption.AllDirectories))
+                        {
+                            files.Add(file);
+                            if (backgroundWorkerSearch.CancellationPending)
+                            {
+                                param.Mode = WorkerProgressParam.WorkerMode.ModeCanceled;
+                                backgroundWorkerSearch.ReportProgress(0, param);
+                                break;
+                            }
+
+                            param.Mode = WorkerProgressParam.WorkerMode.ModeSearchingFiles;
+                            param.FileCount = files.Count;
+                            backgroundWorkerSearch.ReportProgress(0, param);
+                        }
+                    }
+                }
+
+            }
+            else
+            {
+                files.Add(targetPath);
+            }
 
             int count = 0;
             var resultParam = new WorkerResultParam();
