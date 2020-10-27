@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace XDocGrep
 {
-    class Caches
+    public class Caches
     {
         /// <summary>
         /// 
@@ -34,6 +34,14 @@ namespace XDocGrep
             /// 
             /// </summary>
             public List<string> Files { get; set; }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Caches()
+        {
+            DirectoryCaches = new List<DirectoryCache>();
         }
 
         /// <summary>
@@ -94,6 +102,56 @@ namespace XDocGrep
                 return false;
             }
             return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="targetPath"></param>
+        /// <returns></returns>
+        public List<string> HasCache(string targetPath)
+        {
+            if (Directory.Exists(targetPath))
+            {
+                foreach (var directory in DirectoryCaches)
+                {
+                    if (directory.Path == targetPath)
+                    {
+                        if (directory.UpdateTime == Directory.GetLastWriteTime(targetPath))
+                        {
+                            return directory.Files;
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="targetPath"></param>
+        /// <param name="files"></param>
+        public void UpdateCache(string targetPath, List<string> files)
+        {
+            if (Directory.Exists(targetPath))
+            {
+                foreach (var directory in DirectoryCaches)
+                {
+                    if (directory.Path == targetPath)
+                    {
+                        directory.Files = new List<string>(files);
+                        directory.UpdateTime = Directory.GetLastWriteTime(targetPath);
+                        return;
+                    }
+                }
+
+                var cache = new DirectoryCache();
+                cache.Path = targetPath;
+                cache.Files = new List<string>(files);
+                cache.UpdateTime = Directory.GetLastWriteTime(targetPath);
+                DirectoryCaches.Add(cache);
+            }
         }
     }
 }

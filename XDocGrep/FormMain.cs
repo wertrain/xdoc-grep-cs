@@ -143,7 +143,9 @@ namespace XDocGrep
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             _settings.FormSize = Size;
+
             Settings.Save(_settings);
+            Caches.Save(_caches);
         }
 
         /// <summary>
@@ -265,21 +267,9 @@ namespace XDocGrep
             var files = new List<string>();
             if (Directory.Exists(targetPath))
             {
-                bool findCache = false;
-                foreach (var directory in _caches.DirectoryCaches)
-                {
-                    if (directory.Path == targetPath)
-                    {
-                        if (directory.UpdateTime == Directory.GetLastWriteTime(targetPath))
-                        {
-                            files.AddRange(directory.Files);
-                            findCache = true;
-                            break;
-                        }
-                    }
-                }
+                var caches = _caches.HasCache(targetPath);
 
-                if (!findCache)
+                if (caches == null)
                 {
                     foreach (var extension in extensions.Split())
                     {
@@ -300,7 +290,12 @@ namespace XDocGrep
                         }
                     }
                 }
+                else
+                {
+                    files.AddRange(caches);
+                }
 
+                _caches.UpdateCache(targetPath, files);
             }
             else
             {
