@@ -31,6 +31,11 @@ namespace XDocGrep.Localize
                     foreach (ToolStripMenuItem menuItem in childMenuStrip.Items)
                     {
                         menuItem.Text = menuItem.Text.Localize();
+
+                        foreach (ToolStripMenuItem dropDownItems in menuItem.DropDownItems)
+                        {
+                            dropDownItems.Text = dropDownItems.Text.Localize();
+                        }
                     }
                 }
             }

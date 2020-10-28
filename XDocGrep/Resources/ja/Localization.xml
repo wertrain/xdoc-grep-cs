@@ -2,6 +2,7 @@
 <StringLocalizationTable>
   <StringItem id="X-Grepper" context="" translation="X-Grepper" />
   <StringItem id="Tool(&amp;T)" context="" translation="ツール(&amp;T)" />
+  <StringItem id="Clear Caches(&amp;C)" context="" translation="キャッシュのクリア(&amp;C)" />
   <StringItem id="Search File / Directory (&amp;A)" context="" translation="対象ファイル / フォルダ (&amp;A)" />
   <StringItem id="Target Extensions (&amp;E)" context="" translation="対象ファイルの条件　(&amp;E)" />
   <StringItem id="Search Text (&amp;S)" context="" translation="検索文字列 (&amp;S)" />
@@ -16,5 +17,8 @@
   <StringItem id="Text not found" context="" translation="指定されたテキストが見つかりませんでした" />
   <StringItem id="Open In Explorer (&amp;E)" context="" translation="エクスプローラーで開く" />
   <StringItem id="Copy File Path (&amp;C)" context="" translation="ファイルパスをコピー" />
+
+  <StringItem id="Do you want to clear the cache?" context="" translation="キャッシュを削除しますか？" />
+  <StringItem id="Clearing Cache" context="" translation="キャッシュのクリア" />
   
 </StringLocalizationTable>

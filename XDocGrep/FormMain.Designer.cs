@@ -51,6 +51,7 @@
             this.toolStripMenuItemSelectFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSelectDirectory = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorkerSearch = new System.ComponentModel.BackgroundWorker();
+            this.toolStripMenuItemToolClearCaches = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.tableLayoutPanelMain.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -70,6 +71,8 @@
             // 
             // toolStripMenuItemTool
             // 
+            this.toolStripMenuItemTool.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemToolClearCaches});
             this.toolStripMenuItemTool.Name = "toolStripMenuItemTool";
             this.toolStripMenuItemTool.Size = new System.Drawing.Size(55, 20);
             this.toolStripMenuItemTool.Text = "Tool(&T)";
@@ -264,6 +267,13 @@
             this.backgroundWorkerSearch.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorkerSearch_ProgressChanged);
             this.backgroundWorkerSearch.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerSearch_RunWorkerCompleted);
             // 
+            // toolStripMenuItemToolClearCaches
+            // 
+            this.toolStripMenuItemToolClearCaches.Name = "toolStripMenuItemToolClearCaches";
+            this.toolStripMenuItemToolClearCaches.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemToolClearCaches.Text = "Clear Caches(&C)";
+            this.toolStripMenuItemToolClearCaches.Click += new System.EventHandler(this.toolStripMenuItemToolClearCaches_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -315,6 +325,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSelectDirectory;
         private System.ComponentModel.BackgroundWorker backgroundWorkerSearch;
         private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemToolClearCaches;
     }
 }
 

@@ -423,5 +423,24 @@ namespace XDocGrep
         {
             buttonSearch.Enabled = comboBoxSearchText.Text.Length > 0 && comboBoxTarget.Text.Length > 0;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripMenuItemToolClearCaches_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Do you want to clear the cache?".Localize(), 
+                "Clearing Cache".Localize(),
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (result == DialogResult.OK)
+            {
+                _caches = Caches.Default();
+                Caches.Save(_caches);
+            }
+        }
     }
 }
