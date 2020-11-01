@@ -62,6 +62,28 @@ namespace XDocGrep.Localize
                     var menuItem = item as ToolStripMenuItem;
                     menuItem.Text = menuItem.Text.Localize();
                 }
+
+                if (item is ToolStripButton)
+                {
+                    var menuItem = item as ToolStripButton;
+                    menuItem.Text = menuItem.Text.Localize();
+                }
+            }
+        }
+
+        /// <summary>
+        /// コントロールとその子をローカライズする
+        /// </summary>
+        /// <param name="control"></param>
+        public static void Localized(ToolStrip toolStrip)
+        {
+            foreach (var item in toolStrip.Items)
+            {
+                if (item is ToolStripButton)
+                {
+                    var menuItem = item as ToolStripButton;
+                    menuItem.Text = menuItem.Text.Localize();
+                }
             }
         }
     }

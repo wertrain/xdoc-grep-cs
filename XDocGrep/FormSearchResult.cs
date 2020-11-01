@@ -141,22 +141,6 @@ namespace XDocGrep
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void toolStripMenuItemOpenInTextEditor_Click(object sender, EventArgs e)
-        {
-            var listView = listViewSearchResult;
-
-            foreach (ListViewItem item in listView.SelectedItems)
-            {
-                Clipboard.SetText(item.Tag as string);
-                break;
-            }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void listViewSearchResult_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             var listView = listViewSearchResult;

@@ -320,7 +320,15 @@ namespace XDocGrep
                 backgroundWorkerSearch.ReportProgress((int)(((double)count / (double)files.Count) * 100.0), param);
 
                 string extractedText = string.Empty;
-                XDoc2TxtManager.Extract(file, ref extractedText);
+                try
+                {
+                    XDoc2TxtManager.Extract(file, ref extractedText);
+                }
+                catch(Exception)
+                {
+                    break;
+                }
+
 
                 int index = 0;
                 const int aroundTextLength = 20;

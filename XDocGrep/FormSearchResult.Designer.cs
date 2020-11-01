@@ -39,7 +39,6 @@
             this.toolStripMenuItemCopyFilePath = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItemExportText = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemOpenInTextEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanelMain.SuspendLayout();
             this.contextMenuStripMain.SuspendLayout();
             this.SuspendLayout();
@@ -90,43 +89,35 @@
             this.toolStripMenuItemOpenInExplorer,
             this.toolStripMenuItemCopyFilePath,
             this.toolStripSeparator1,
-            this.toolStripMenuItemExportText,
-            this.toolStripMenuItemOpenInTextEditor});
+            this.toolStripMenuItemExportText});
             this.contextMenuStripMain.Name = "contextMenuStripMain";
-            this.contextMenuStripMain.Size = new System.Drawing.Size(192, 98);
+            this.contextMenuStripMain.Size = new System.Drawing.Size(183, 98);
             // 
             // toolStripMenuItemOpenInExplorer
             // 
             this.toolStripMenuItemOpenInExplorer.Name = "toolStripMenuItemOpenInExplorer";
-            this.toolStripMenuItemOpenInExplorer.Size = new System.Drawing.Size(191, 22);
+            this.toolStripMenuItemOpenInExplorer.Size = new System.Drawing.Size(182, 22);
             this.toolStripMenuItemOpenInExplorer.Text = "Open In Explorer (&O)";
             this.toolStripMenuItemOpenInExplorer.Click += new System.EventHandler(this.toolStripMenuItemOpenInExplorer_Click);
             // 
             // toolStripMenuItemCopyFilePath
             // 
             this.toolStripMenuItemCopyFilePath.Name = "toolStripMenuItemCopyFilePath";
-            this.toolStripMenuItemCopyFilePath.Size = new System.Drawing.Size(191, 22);
+            this.toolStripMenuItemCopyFilePath.Size = new System.Drawing.Size(182, 22);
             this.toolStripMenuItemCopyFilePath.Text = "Copy File Path (&C)";
             this.toolStripMenuItemCopyFilePath.Click += new System.EventHandler(this.toolStripMenuItemCopyFilePath_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(188, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(179, 6);
             // 
             // toolStripMenuItemExportText
             // 
             this.toolStripMenuItemExportText.Name = "toolStripMenuItemExportText";
-            this.toolStripMenuItemExportText.Size = new System.Drawing.Size(191, 22);
+            this.toolStripMenuItemExportText.Size = new System.Drawing.Size(182, 22);
             this.toolStripMenuItemExportText.Text = "Export Text (&T)";
             this.toolStripMenuItemExportText.Click += new System.EventHandler(this.toolStripMenuItemExportText_Click);
-            // 
-            // toolStripMenuItemOpenInTextEditor
-            // 
-            this.toolStripMenuItemOpenInTextEditor.Name = "toolStripMenuItemOpenInTextEditor";
-            this.toolStripMenuItemOpenInTextEditor.Size = new System.Drawing.Size(191, 22);
-            this.toolStripMenuItemOpenInTextEditor.Text = "Open In Text Editor (&E)";
-            this.toolStripMenuItemOpenInTextEditor.Click += new System.EventHandler(this.toolStripMenuItemOpenInTextEditor_Click);
             // 
             // FormSearchResult
             // 
@@ -154,6 +145,5 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCopyFilePath;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemExportText;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemOpenInTextEditor;
     }
 }
