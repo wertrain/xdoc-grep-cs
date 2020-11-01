@@ -28,13 +28,21 @@ namespace XDocGrep.Localize
                 if (child is MenuStrip)
                 {
                     var childMenuStrip = child as MenuStrip;
-                    foreach (ToolStripMenuItem menuItem in childMenuStrip.Items)
+                    foreach (var item in childMenuStrip.Items)
                     {
-                        menuItem.Text = menuItem.Text.Localize();
-
-                        foreach (ToolStripMenuItem dropDownItems in menuItem.DropDownItems)
+                        if (item is ToolStripMenuItem)
                         {
-                            dropDownItems.Text = dropDownItems.Text.Localize();
+                            var menuItem = item as ToolStripMenuItem;
+                            menuItem.Text = menuItem.Text.Localize();
+
+                            foreach (var childItem in menuItem.DropDownItems)
+                            {
+                                if (childItem is ToolStripMenuItem)
+                                {
+                                    var dropDownItem = childItem as ToolStripMenuItem;
+                                    dropDownItem.Text = dropDownItem.Text.Localize();
+                                }
+                            }
                         }
                     }
                 }
@@ -47,9 +55,13 @@ namespace XDocGrep.Localize
         /// <param name="control"></param>
         public static void Localized(ContextMenuStrip contextMenuStrip)
         {
-            foreach (ToolStripMenuItem menuItem in contextMenuStrip.Items)
+            foreach (var item in contextMenuStrip.Items)
             {
-                menuItem.Text = menuItem.Text.Localize();
+                if (item is ToolStripMenuItem)
+                {
+                    var menuItem = item as ToolStripMenuItem;
+                    menuItem.Text = menuItem.Text.Localize();
+                }
             }
         }
     }

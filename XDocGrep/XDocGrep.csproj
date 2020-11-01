@@ -68,6 +68,12 @@
     <Compile Include="FormSearchResult.Designer.cs">
       <DependentUpon>FormSearchResult.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTextPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTextPreview.Designer.cs">
+      <DependentUpon>FormTextPreview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Localize\EmbeddedResourceStringLocalizer.cs" />
     <Compile Include="Localize\Localizer.cs" />
     <Compile Include="Localize\LocalizeUtil.cs" />
@@ -82,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSearchResult.resx">
       <DependentUpon>FormSearchResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTextPreview.resx">
+      <DependentUpon>FormTextPreview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

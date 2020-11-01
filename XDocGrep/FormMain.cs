@@ -91,6 +91,11 @@ namespace XDocGrep
             /// <summary>
             /// 
             /// </summary>
+            public string SearchText { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
             public WorkerResultParam()
             {
                 Results = new List<Result>();
@@ -305,6 +310,7 @@ namespace XDocGrep
             int count = 0;
             var resultParam = new WorkerResultParam();
             resultParam.FileCount = files.Count;
+            resultParam.SearchText = searchText;
             foreach (var file in files)
             {
                 var param = new WorkerProgressParam();
@@ -407,7 +413,7 @@ namespace XDocGrep
                         searchResult.FilePath = result.FilePath;
                         searchResults.Add(searchResult);
                     }
-                    form.SetResults(searchResults);
+                    form.SetResults(resultParam.SearchText, searchResults);
                     form.ShowDialog();
                 }
             }

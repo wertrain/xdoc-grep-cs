@@ -37,6 +37,9 @@
             this.contextMenuStripMain = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemOpenInExplorer = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemCopyFilePath = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItemExportText = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemOpenInTextEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanelMain.SuspendLayout();
             this.contextMenuStripMain.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +62,7 @@
             this.listViewSearchResult.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderText,
             this.columnHeaderFileName});
+            this.listViewSearchResult.ContextMenuStrip = this.contextMenuStripMain;
             this.listViewSearchResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewSearchResult.FullRowSelect = true;
             this.listViewSearchResult.HideSelection = false;
@@ -68,6 +72,7 @@
             this.listViewSearchResult.TabIndex = 0;
             this.listViewSearchResult.UseCompatibleStateImageBehavior = false;
             this.listViewSearchResult.View = System.Windows.Forms.View.Details;
+            this.listViewSearchResult.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listViewSearchResult_MouseDoubleClick);
             // 
             // columnHeaderText
             // 
@@ -83,21 +88,45 @@
             // 
             this.contextMenuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemOpenInExplorer,
-            this.toolStripMenuItemCopyFilePath});
+            this.toolStripMenuItemCopyFilePath,
+            this.toolStripSeparator1,
+            this.toolStripMenuItemExportText,
+            this.toolStripMenuItemOpenInTextEditor});
             this.contextMenuStripMain.Name = "contextMenuStripMain";
-            this.contextMenuStripMain.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStripMain.Size = new System.Drawing.Size(192, 98);
             // 
             // toolStripMenuItemOpenInExplorer
             // 
             this.toolStripMenuItemOpenInExplorer.Name = "toolStripMenuItemOpenInExplorer";
-            this.toolStripMenuItemOpenInExplorer.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItemOpenInExplorer.Text = "Open In Explorer (&E)";
+            this.toolStripMenuItemOpenInExplorer.Size = new System.Drawing.Size(191, 22);
+            this.toolStripMenuItemOpenInExplorer.Text = "Open In Explorer (&O)";
+            this.toolStripMenuItemOpenInExplorer.Click += new System.EventHandler(this.toolStripMenuItemOpenInExplorer_Click);
             // 
             // toolStripMenuItemCopyFilePath
             // 
             this.toolStripMenuItemCopyFilePath.Name = "toolStripMenuItemCopyFilePath";
-            this.toolStripMenuItemCopyFilePath.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemCopyFilePath.Size = new System.Drawing.Size(191, 22);
             this.toolStripMenuItemCopyFilePath.Text = "Copy File Path (&C)";
+            this.toolStripMenuItemCopyFilePath.Click += new System.EventHandler(this.toolStripMenuItemCopyFilePath_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(188, 6);
+            // 
+            // toolStripMenuItemExportText
+            // 
+            this.toolStripMenuItemExportText.Name = "toolStripMenuItemExportText";
+            this.toolStripMenuItemExportText.Size = new System.Drawing.Size(191, 22);
+            this.toolStripMenuItemExportText.Text = "Export Text (&T)";
+            this.toolStripMenuItemExportText.Click += new System.EventHandler(this.toolStripMenuItemExportText_Click);
+            // 
+            // toolStripMenuItemOpenInTextEditor
+            // 
+            this.toolStripMenuItemOpenInTextEditor.Name = "toolStripMenuItemOpenInTextEditor";
+            this.toolStripMenuItemOpenInTextEditor.Size = new System.Drawing.Size(191, 22);
+            this.toolStripMenuItemOpenInTextEditor.Text = "Open In Text Editor (&E)";
+            this.toolStripMenuItemOpenInTextEditor.Click += new System.EventHandler(this.toolStripMenuItemOpenInTextEditor_Click);
             // 
             // FormSearchResult
             // 
@@ -123,5 +152,8 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStripMain;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemOpenInExplorer;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCopyFilePath;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemExportText;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemOpenInTextEditor;
     }
 }

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <StringLocalizationTable>
-  <StringItem id="X-Grepper" context="" translation="X-Grepper" />
+  <StringItem id="X-Grepper" context="" translation="ドキュメント全文検索" />
   <StringItem id="Tool(&amp;T)" context="" translation="ツール(&amp;T)" />
   <StringItem id="Clear Caches(&amp;C)" context="" translation="キャッシュのクリア(&amp;C)" />
   <StringItem id="Search File / Directory (&amp;A)" context="" translation="対象ファイル / フォルダ (&amp;A)" />
@@ -15,10 +15,18 @@
   <StringItem id="Search Result" context="" translation="検索結果" />
   <StringItem id="File not found" context="" translation="ファイルが見つかりませんでした" />
   <StringItem id="Text not found" context="" translation="指定されたテキストが見つかりませんでした" />
-  <StringItem id="Open In Explorer (&amp;E)" context="" translation="エクスプローラーで開く" />
-  <StringItem id="Copy File Path (&amp;C)" context="" translation="ファイルパスをコピー" />
-
   <StringItem id="Do you want to clear the cache?" context="" translation="キャッシュを削除しますか？" />
   <StringItem id="Clearing Cache" context="" translation="キャッシュのクリア" />
-  
+
+  <StringItem id="Open In Explorer (&amp;O)" context="" translation="エクスプローラーで開く (&amp;O)" />
+  <StringItem id="Copy File Path (&amp;C)" context="" translation="ファイルパスをコピー (&amp;C)" />
+  <StringItem id="Export Text (&amp;T)" context="" translation="テキストファイルとして出力 (&amp;T)" />
+  <StringItem id="Open In Text Editor (&amp;E)" context="" translation="テキストエディタで開く (&amp;E)" />
+
+  <StringItem id="Text File (*.txt)|*.txt" context="" translation="テキスト ファイル (*.txt)|*.txt" />
+  <StringItem id="Failed to save the file" context="" translation="ファイルの保存に失敗しました" />
+  <StringItem id="Error" context="" translation="エラー" />
+
+  <StringItem id="File Preview" context="" translation="ファイルプレビュー" />
+
 </StringLocalizationTable>
