@@ -84,6 +84,12 @@ namespace XDocGrep.Localize
                     var menuItem = item as ToolStripButton;
                     menuItem.Text = menuItem.Text.Localize();
                 }
+
+                if (item is ToolStripLabel)
+                {
+                    var menuItem = item as ToolStripLabel;
+                    menuItem.Text = menuItem.Text.Localize();
+                }
             }
         }
     }

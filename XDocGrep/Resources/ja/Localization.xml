@@ -32,6 +32,7 @@
   <StringItem id="Text File (*.txt)|*.txt" context="" translation="テキスト ファイル (*.txt)|*.txt" />
   <StringItem id="Failed to save the file" context="" translation="ファイルの保存に失敗しました" />
   <!-- プレビューウィンドウ関連 -->
+  <StringItem id="Search Word" context="" translation="検索文字列" />
   <StringItem id="Previous (&amp;P)" context="" translation="前へ (&amp;P)" />
   <StringItem id="Next (&amp;N)" context="" translation="次へ (&amp;N)" />
   <!-- 汎用 -->

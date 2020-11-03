@@ -32,9 +32,10 @@
             this.richTextBoxFilePreview = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.toolStripPreviewControl = new System.Windows.Forms.ToolStrip();
+            this.toolStripTextBoxSearchedWord = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButtonPrev = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonNext = new System.Windows.Forms.ToolStripButton();
-            this.toolStripTextBoxSearchedWord = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripLabelSearchWord = new System.Windows.Forms.ToolStripLabel();
             this.tableLayoutPanelMain.SuspendLayout();
             this.toolStripPreviewControl.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +67,7 @@
             // toolStripPreviewControl
             // 
             this.toolStripPreviewControl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabelSearchWord,
             this.toolStripTextBoxSearchedWord,
             this.toolStripButtonPrev,
             this.toolStripButtonNext});
@@ -74,6 +76,13 @@
             this.toolStripPreviewControl.Size = new System.Drawing.Size(800, 25);
             this.toolStripPreviewControl.TabIndex = 0;
             this.toolStripPreviewControl.Text = "toolStrip1";
+            // 
+            // toolStripTextBoxSearchedWord
+            // 
+            this.toolStripTextBoxSearchedWord.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBoxSearchedWord.Name = "toolStripTextBoxSearchedWord";
+            this.toolStripTextBoxSearchedWord.Size = new System.Drawing.Size(100, 25);
+            this.toolStripTextBoxSearchedWord.TextChanged += new System.EventHandler(this.toolStripTextBoxSearchedWord_TextChanged);
             // 
             // toolStripButtonPrev
             // 
@@ -93,11 +102,11 @@
             this.toolStripButtonNext.Text = "Next (&N)";
             this.toolStripButtonNext.Click += new System.EventHandler(this.toolStripButtonNext_Click);
             // 
-            // toolStripTextBoxSearchedWord
+            // toolStripLabelSearchWord
             // 
-            this.toolStripTextBoxSearchedWord.Name = "toolStripTextBoxSearchedWord";
-            this.toolStripTextBoxSearchedWord.Size = new System.Drawing.Size(100, 25);
-            this.toolStripTextBoxSearchedWord.TextChanged += new System.EventHandler(this.toolStripTextBoxSearchedWord_TextChanged);
+            this.toolStripLabelSearchWord.Name = "toolStripLabelSearchWord";
+            this.toolStripLabelSearchWord.Size = new System.Drawing.Size(74, 22);
+            this.toolStripLabelSearchWord.Text = "Search Word";
             // 
             // FormTextPreview
             // 
@@ -124,5 +133,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonPrev;
         private System.Windows.Forms.ToolStripButton toolStripButtonNext;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBoxSearchedWord;
+        private System.Windows.Forms.ToolStripLabel toolStripLabelSearchWord;
     }
 }
