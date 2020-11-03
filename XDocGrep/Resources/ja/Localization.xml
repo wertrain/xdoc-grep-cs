@@ -19,8 +19,8 @@
   <!-- メインフォームダイアログ -->
   <StringItem id="File not found" context="" translation="ファイルが見つかりませんでした" />
   <StringItem id="Text not found" context="" translation="指定されたテキストが見つかりませんでした" />
-  <StringItem id="xd2txlib.dll not found" context="" translation="&quot;xd2txlib.dll&quot; が見つかりませんでした" />
-  <StringItem id="xd2txlib.dll function call failed" context="" translation="&quot;xd2txlib.dll&quot; の関数呼び出しに失敗しました" />
+  <StringItem id="xd2txlib.dll not found" context="" translation="xd2txlib.dll が見つかりませんでした" />
+  <StringItem id="xd2txlib.dll function call failed" context="" translation="xd2txlib.dll の関数呼び出しに失敗しました" />
   <StringItem id="Do you want to clear the cache?" context="" translation="キャッシュを削除しますか？" />
   <StringItem id="Clearing Cache" context="" translation="キャッシュのクリア" />
   <!-- 検索結果フォーム関連 -->
