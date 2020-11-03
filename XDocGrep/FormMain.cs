@@ -65,6 +65,22 @@ namespace XDocGrep
             /// <summary>
             /// 
             /// </summary>
+            public enum Errors
+            {
+                /// <summary>
+                /// 
+                /// </summary>
+                None,
+
+                /// <summary>
+                /// 
+                /// </summary>
+                LibraryDoesNotWork,
+            }
+
+            /// <summary>
+            /// 
+            /// </summary>
             public class Result
             {
                 /// <summary>
@@ -83,6 +99,12 @@ namespace XDocGrep
             /// </summary>
             public List<Result> Results { get; set; }
 
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public Errors Error { get; set; }
+
             /// <summary>
             /// 
             /// </summary>
@@ -99,6 +121,7 @@ namespace XDocGrep
             public WorkerResultParam()
             {
                 Results = new List<Result>();
+                Error = Errors.None;
             }
         }
 
@@ -326,6 +349,7 @@ namespace XDocGrep
                 }
                 catch(Exception)
                 {
+                    resultParam.Error = WorkerResultParam.Errors.LibraryDoesNotWork;
                     break;
                 }
 
@@ -403,8 +427,24 @@ namespace XDocGrep
             toolStripProgressBarSearchProgress.Available = false;
 
             var resultParam = e.Result as WorkerResultParam;
+
+            // エラーチェック
+            if (resultParam.Error == WorkerResultParam.Errors.LibraryDoesNotWork)
+            {
+                var assembly = System.Reflection.Assembly.GetEntryAssembly();
+                var filePath = Path.GetDirectoryName(assembly.Location) + Path.DirectorySeparatorChar + "xd2txlib.dll";
+
+                MessageBox.Show(File.Exists(filePath) ?
+                    "xd2txlib.dll function call failed".Localize() :
+                    "xd2txlib.dll not found".Localize(), 
+                    Text,
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (resultParam.Results.Count == 0)
             {
+                
                 MessageBox.Show(resultParam.FileCount == 0 ?
                     "File not found".Localize() : "Text not found".Localize(), Text,
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
