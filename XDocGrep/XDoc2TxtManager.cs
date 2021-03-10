@@ -43,7 +43,7 @@ namespace XDocGrep
 
             public XDoc2Txt()
             {
-                Handle = LoadLibrary(@"xd2txlib.dll");
+                Handle = LoadLibrary(DllPath);
             }
 
             ~XDoc2Txt()
@@ -94,5 +94,9 @@ namespace XDocGrep
             }
         }
 
+        /// <summary>
+        /// DLL までのパス
+        /// </summary>
+        public static readonly string DllPath = @".\xd2tx220_x64\dll\xd2txlib.dll";
     }
 }

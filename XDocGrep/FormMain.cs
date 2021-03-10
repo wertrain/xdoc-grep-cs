@@ -432,9 +432,8 @@ namespace XDocGrep
             if (resultParam.Error == WorkerResultParam.Errors.LibraryDoesNotWork)
             {
                 var assembly = System.Reflection.Assembly.GetEntryAssembly();
-                var filePath = Path.GetDirectoryName(assembly.Location) + Path.DirectorySeparatorChar + "xd2txlib.dll";
 
-                MessageBox.Show(File.Exists(filePath) ?
+                MessageBox.Show(File.Exists(XDoc2TxtManager.DllPath) ?
                     "xd2txlib.dll function call failed".Localize() :
                     "xd2txlib.dll not found".Localize(), 
                     Text,
