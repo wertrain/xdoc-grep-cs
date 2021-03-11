@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemToolClearCaches = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.toolStripMenuItemSelectFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSelectDirectory = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorkerSearch = new System.ComponentModel.BackgroundWorker();
-            this.toolStripMenuItemToolClearCaches = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.tableLayoutPanelMain.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -76,6 +76,13 @@
             this.toolStripMenuItemTool.Name = "toolStripMenuItemTool";
             this.toolStripMenuItemTool.Size = new System.Drawing.Size(55, 20);
             this.toolStripMenuItemTool.Text = "Tool(&T)";
+            // 
+            // toolStripMenuItemToolClearCaches
+            // 
+            this.toolStripMenuItemToolClearCaches.Name = "toolStripMenuItemToolClearCaches";
+            this.toolStripMenuItemToolClearCaches.Size = new System.Drawing.Size(155, 22);
+            this.toolStripMenuItemToolClearCaches.Text = "Clear Caches(&C)";
+            this.toolStripMenuItemToolClearCaches.Click += new System.EventHandler(this.toolStripMenuItemToolClearCaches_Click);
             // 
             // tableLayoutPanelMain
             // 
@@ -266,13 +273,6 @@
             this.backgroundWorkerSearch.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerSearch_DoWork);
             this.backgroundWorkerSearch.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorkerSearch_ProgressChanged);
             this.backgroundWorkerSearch.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerSearch_RunWorkerCompleted);
-            // 
-            // toolStripMenuItemToolClearCaches
-            // 
-            this.toolStripMenuItemToolClearCaches.Name = "toolStripMenuItemToolClearCaches";
-            this.toolStripMenuItemToolClearCaches.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItemToolClearCaches.Text = "Clear Caches(&C)";
-            this.toolStripMenuItemToolClearCaches.Click += new System.EventHandler(this.toolStripMenuItemToolClearCaches_Click);
             // 
             // FormMain
             // 

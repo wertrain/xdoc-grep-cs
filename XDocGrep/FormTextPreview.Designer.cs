@@ -32,10 +32,10 @@
             this.richTextBoxFilePreview = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.toolStripPreviewControl = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabelSearchWord = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBoxSearchedWord = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButtonPrev = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonNext = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabelSearchWord = new System.Windows.Forms.ToolStripLabel();
             this.tableLayoutPanelMain.SuspendLayout();
             this.toolStripPreviewControl.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +77,12 @@
             this.toolStripPreviewControl.TabIndex = 0;
             this.toolStripPreviewControl.Text = "toolStrip1";
             // 
+            // toolStripLabelSearchWord
+            // 
+            this.toolStripLabelSearchWord.Name = "toolStripLabelSearchWord";
+            this.toolStripLabelSearchWord.Size = new System.Drawing.Size(74, 22);
+            this.toolStripLabelSearchWord.Text = "Search Word";
+            // 
             // toolStripTextBoxSearchedWord
             // 
             this.toolStripTextBoxSearchedWord.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -101,12 +107,6 @@
             this.toolStripButtonNext.Size = new System.Drawing.Size(72, 22);
             this.toolStripButtonNext.Text = "Next (&N)";
             this.toolStripButtonNext.Click += new System.EventHandler(this.toolStripButtonNext_Click);
-            // 
-            // toolStripLabelSearchWord
-            // 
-            this.toolStripLabelSearchWord.Name = "toolStripLabelSearchWord";
-            this.toolStripLabelSearchWord.Size = new System.Drawing.Size(74, 22);
-            this.toolStripLabelSearchWord.Text = "Search Word";
             // 
             // FormTextPreview
             // 
