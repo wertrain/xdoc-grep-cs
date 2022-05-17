@@ -254,6 +254,11 @@ namespace XDocGrep
                 cfd.RestoreDirectory = true;
                 cfd.IsFolderPicker = false;
 
+                if (File.Exists(comboBoxTarget.Text))
+                {
+                    cfd.InitialDirectory = Path.GetDirectoryName(comboBoxTarget.Text);
+                }
+
                 if (cfd.ShowDialog() == CommonFileDialogResult.Ok)
                 {
                     comboBoxTarget.Text = cfd.FileName;
@@ -272,6 +277,11 @@ namespace XDocGrep
             {
                 cfd.RestoreDirectory = true;
                 cfd.IsFolderPicker = true;
+
+                if (Directory.Exists(comboBoxTarget.Text))
+                {
+                    cfd.InitialDirectory = comboBoxTarget.Text;
+                }
 
                 if (cfd.ShowDialog() == CommonFileDialogResult.Ok)
                 {
