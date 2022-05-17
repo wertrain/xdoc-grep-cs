@@ -45,9 +45,9 @@ namespace XDocGrep
             var defaultExtensions = new List<string>()
             {
                 "*.pdf",                   // Adobe PDF
-                "*.xls .xlsx",             // Microsoft Excel 
-                "*.doc .docx",             // Microsoft Word 
-                "*.ppt .pptx",             // Microsoft PowerPoint
+                "*.xls *.xlsx",            // Microsoft Excel 
+                "*.doc *.docx",            // Microsoft Word 
+                "*.ppt *.pptx",            // Microsoft PowerPoint
                 "*.eml",                   // OutlookExpressのエクスポート形式 
                 "*.sxw *.sxc *.sxi *.sxd", // OpenOffice.org
                 "*.odt *.ods *.odp *.odg", // Open Document
