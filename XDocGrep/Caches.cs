@@ -113,11 +113,23 @@ namespace XDocGrep
         {
             if (Directory.Exists(targetPath))
             {
+                DateTime latestTime = Directory.GetLastWriteTime(targetPath);
+
+                foreach (string subDirectory in Directory.EnumerateDirectories(targetPath, "*", System.IO.SearchOption.AllDirectories))
+                {
+                    var lastWriteTime = Directory.GetLastWriteTime(subDirectory);
+
+                    if (latestTime < lastWriteTime)
+                    {
+                        latestTime = lastWriteTime;
+                    }
+                }
+
                 foreach (var directory in DirectoryCaches)
                 {
                     if (directory.Path == targetPath)
                     {
-                        if (directory.UpdateTime == Directory.GetLastWriteTime(targetPath))
+                        if (directory.UpdateTime == latestTime)
                         {
                             return directory.Files;
                         }
@@ -136,12 +148,24 @@ namespace XDocGrep
         {
             if (Directory.Exists(targetPath))
             {
+                DateTime latestTime = Directory.GetLastWriteTime(targetPath);
+
+                foreach (string subDirectory in Directory.EnumerateDirectories(targetPath, "*", System.IO.SearchOption.AllDirectories))
+                {
+                    var lastWriteTime = Directory.GetLastWriteTime(subDirectory);
+
+                    if (latestTime < lastWriteTime)
+                    {
+                        latestTime = lastWriteTime;
+                    }
+                }
+
                 foreach (var directory in DirectoryCaches)
                 {
                     if (directory.Path == targetPath)
                     {
                         directory.Files = new List<string>(files);
-                        directory.UpdateTime = Directory.GetLastWriteTime(targetPath);
+                        directory.UpdateTime = latestTime;
                         return;
                     }
                 }
@@ -149,7 +173,7 @@ namespace XDocGrep
                 var cache = new DirectoryCache();
                 cache.Path = targetPath;
                 cache.Files = new List<string>(files);
-                cache.UpdateTime = Directory.GetLastWriteTime(targetPath);
+                cache.UpdateTime = latestTime;
                 DirectoryCaches.Add(cache);
             }
         }
