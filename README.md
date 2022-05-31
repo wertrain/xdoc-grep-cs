@@ -6,4 +6,4 @@ X-Grepper is a tool to search for text in files such as \*.docx \*.xlsx \*.pdf. 
 Internally, it uses the xdoc2txt feature and requires you to download xdoc2txt from http://ebstudio.info/home/xdoc2txt.html.
 
 ## Download
-[Version 1.0.0.1](https://wertrain.github.io/software/XDocGrep.zip "XDocGrep.zip")
+[Version 1.0.0.2](https://wertrain.github.io/software/XDocGrep.zip "XDocGrep.zip")
